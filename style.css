@@ -1,0 +1,35 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+font-family: 'Old Standard TT', serif;
+font-family: 'Source Code Pro', monospace;
+}
+
+.header{
+
+    text-align: center;
+    margin-top: 20rem;
+}
+form{
+    width: 500px;
+    height:400px;
+    background:red;
+    margin:3rem auto;
+    padding-top:2rem;
+    text-align:center;
+    position:relative;
+}
+
+input{
+width:30rem;
+padding:1rem;
+
+}
+button{
+position: absolute;
+right:0.6rem;
+padding:1rem;
+}
