@@ -6,19 +6,26 @@
 body{
 font-family: 'Old Standard TT', serif;
 font-family: 'Source Code Pro', monospace;
+background: #44A08D;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #093637, #44A08D);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #093637, #44A08D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+height: 100vh;
 }
 
 .header{
 
     text-align: center;
     margin-top: 20rem;
+    color:white;
+    font-size: 1.5rem;
 }
 form{
     width: 500px;
-    height:400px;
-    background:red;
+    background:white;
     margin:3rem auto;
     padding-top:2rem;
+    padding-bottom: 2rem;
     text-align:center;
     position:relative;
 }
@@ -26,10 +33,34 @@ form{
 input{
 width:30rem;
 padding:1rem;
+outline: none;
 
 }
 button{
 position: absolute;
 right:0.6rem;
-padding:1rem;
+padding:0.8rem;
+font-size: 1.2rem;
+background: #44A08D;
+color:white;
+}
+.todo{
+    width: 500px;
+    color:white;
+    font-size:1.2rem;
+    margin:0.6rem auto;
+    position: relative;
+
+}
+ul{
+    list-style: none;
+}
+li{
+    padding: 2rem;
+    background: white;
+    color:black;
+}
+.complete-btn,.trash-btn{
+    position: absolute;
+    top:0%;
 }
