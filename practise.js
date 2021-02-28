@@ -2,11 +2,13 @@
 const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
+const filterOption = document.querySelector('.filter-todo');
 
 //Event Listeners
 
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
+filterOption.addEventListener('click', filtertodo);
 
 function addTodo(event) {
   //Prevent form from submitting
@@ -31,10 +33,59 @@ function addTodo(event) {
 
   //Check Trash Button
   const trashButton = document.createElement('button');
-  trashButton.innerHTML = '<i class="fas fa fa-trash-alt"></i>';
+  trashButton.innerHTML = '<i class="fas fa fa-trash"></i>';
   trashButton.classList.add('trash-btn');
   todoDiv.appendChild(trashButton);
 
   //Append to list
   todoList.appendChild(todoDiv);
+
+  //Clear Todo Input value
+  todoInput.value = '';
+}
+//Delete Todo
+function deleteCheck(e) {
+  const item = e.target;
+
+  //delete todo
+  if (item.classList[0] === 'trash-btn') {
+    const todo = item.parentElement;
+    todo.remove();
+  }
+  //Check Mark
+  else {
+    if (item.classList[0] === 'complete-btn') {
+      console.log('yes');
+      const todo = item.parentElement;
+      todo.classList.toggle('completed');
+    }
+  }
+}
+
+function filtertodo(e) {
+  const todos = todoList.childNodes;
+  todos.forEach(function (todo) {
+    switch (e.target.value) {
+      case 'all':
+        todo.style.display = 'flex';
+        break;
+      case 'completed':
+        if (todo.classList.contains('completed')) {
+          console.log('completed');
+          todo.style.display = 'flex';
+        } else {
+          todo.style.display = 'none';
+        }
+        break;
+      case 'uncompleted':
+        if (!todo.classList.contains('completed')) {
+          console.log('uncompleted');
+          todo.style.display = 'flex';
+        } else {
+          todo.style.display = 'none';
+        }
+        break;
+      default:
+    }
+  });
 }

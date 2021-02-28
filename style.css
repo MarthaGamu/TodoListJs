@@ -56,11 +56,34 @@ ul{
     list-style: none;
 }
 li{
-    padding: 2rem;
+    padding: 1rem;
     background: white;
     color:black;
+    
+
+    
 }
-.complete-btn,.trash-btn{
+.complete-btn{
     position: absolute;
     top:0%;
+    margin-right:3rem;
+    outline:none;
+    pointer-events: fill;
+    cursor: pointer;
+
+    
+}
+.trash-btn{
+    position: absolute;
+    top:0%;
+    outline:none;
+   
+}
+.completed{
+    text-decoration: line-through;
+    color:rgb(62, 87, 87);
+    
+}
+.select{
+    margin-top:0.5rem;
 }
