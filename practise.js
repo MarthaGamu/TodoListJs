@@ -89,3 +89,28 @@ function filtertodo(e) {
     }
   });
 }
+
+const arr = [
+  {
+    id: 1,
+    name: 'Martha',
+  },
+  {
+    id: 2,
+    name: 'Alex',
+  },
+  {
+    id: 3,
+    name: 'Baby',
+  },
+];
+const changeStuff = (item) => {
+  return {
+    ...item,
+    id: item.id * 10,
+  };
+};
+
+const tv = arr.map(changeStuff);
+
+console.log('tv => ', tv);
